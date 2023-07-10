@@ -195,6 +195,7 @@ public class PilaNum {
         while (!pilaAux.esvacia()) {
             adicionar(pilaAux.eliminar());
         }
+        mostrarPila();
     }
 
     void ordenarDescendenteImpares() {
@@ -215,7 +216,9 @@ public class PilaNum {
             if (!pilaAux.esvacia())
                 adicionar(pilaAux.eliminar());
         }
+        mostrarPila();
     }
+
     void ordenarParesInferiorImparesSuperior() {
         PilaNum pilaAux = new PilaNum();
         PilaNum pares = new PilaNum();
@@ -236,6 +239,29 @@ public class PilaNum {
             pilaAux.adicionar(pares.eliminar());
         while (!pilaAux.esvacia())
             adicionar(pilaAux.eliminar());
+        mostrarPila();
+
     }
+
+
+//    void ordenarImpares() {
+//        PilaNum aux = new PilaNum();
+//        PilaNum aux2 = new PilaNum();
+//        while(!estaVacia()) {
+//            int num=a.eliPila();
+//            if(num%2!=0) {
+//                aux.adicionar(num);
+//            }else {
+//                aux2.adicionar(num);
+//            }
+//        }
+//        aux.invertir();
+//        while(!aux2.esvacia()) {
+//            a.adiPila(aux2.eliminar());
+//        }
+//        while(!aux.est()) {
+//            a.adiPila(aux.eliPila());
+//        }
+//    }
 
 }

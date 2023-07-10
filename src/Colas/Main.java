@@ -76,8 +76,8 @@ public class Main {
 //        System.out.println("promedio  de monto de pago: " + prom);
 
 //        =================== COlA OBJETOS - ESTUDIANTE ======================
-//        ColaEstudiante cola = new ColaEstudiante();
-//        cola.llenarCola();
+        ColaEstudiante cola = new ColaEstudiante();
+        cola.llenarCola();
 //        System.out.println("--- mostrar estudiantes femeninos ---");
 //        cola.mostrarEstudiatesFemeninos();
 //
@@ -86,6 +86,12 @@ public class Main {
 //            cola.mostrarEstudianteMayorEdad();
 
 
+//        System.out.println("--- mostrar estudiantes repetidos ---");
+//        cola.mostrarEstudiantesRepetido("mario");
+
+        System.out.println("--- desviacion estandar ---");
+        double e  = cola.calcularDesviacionEstandarEdades();
+        System.out.println("desviacion estandar: " + e);
     }
 
 }

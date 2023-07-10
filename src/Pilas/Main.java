@@ -2,8 +2,8 @@ package Pilas;
 public class Main {
 
     public static void main(String[] args) {
-//        PilaNum pila = new PilaNum();
-//        pila.llenarPila();
+        PilaNum pila = new PilaNum();
+        pila.llenarPila();
 
 //        double promedio = pila.calcularPromedio();
 //        double varianza = pila.calcularVarianza();
@@ -18,12 +18,12 @@ public class Main {
 //        System.out.println("Medida Geométrica: " + medidaGeometrica);
 //        pila.ordenarAscendente();
 //        pila.ordenarDescendenteImpares();
-//        pila.ordenarParesInferiorImparesSuperior();
+        pila.ordenarParesInferiorImparesSuperior();
 //        pila.mostrarPila();
 
-        PilaCad pila = new PilaCad();
-        pila.llenarPila();
-        pila.mostrarPila();
+//        PilaCad pila = new PilaCad();
+//        pila.llenarPila();
+//        pila.mostrarPila();
 //        System.out.println("--- pila convertida ---");
 //        pila.convertirMayusculas();
 //        pila.mostrarPila();
@@ -36,9 +36,14 @@ public class Main {
 //        pila.mostrarPila();
 //        pila.comprobarCorreo();
 
-        System.out.println("--- pila de ordenada alfabeticamente ---");
-        pila.ordenarAlfabeticamente();
-        pila.mostrarPila();
+//        System.out.println("--- pila de ordenada alfabeticamente ---");
+//        pila.ordenarAlfabeticamente();
+//        pila.mostrarPila();
+
+
+//        ===============================================
+
+
 
 
 

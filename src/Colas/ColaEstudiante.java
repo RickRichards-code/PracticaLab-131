@@ -120,7 +120,7 @@ public class ColaEstudiante {
     }
 
 
-    public double calcularDesviacionEstandarEdades() {
+    double calcularDesviacionEstandarEdades() {
         double media = 0;
         double sumaCuadradosDiferencias = 0;
         int contador = 0;
@@ -154,36 +154,16 @@ public class ColaEstudiante {
 
         return desviacionEstandar;
     }
-
-//    public void mostrarNombresRepetidos() {
-//        List<String> nombres = new ArrayList<>();
-//        List<String> nombresRepetidos = new ArrayList<>();
-//
-//        ColaEstudiante aux = new ColaEstudiante();
-//        while (!esvacia()) {
-//            Estudiante estudiante = eliminar();
-//            String nombre = estudiante.getNombre();
-//
-//            if (nombres.contains(nombre) && !nombresRepetidos.contains(nombre)) {
-//                nombresRepetidos.add(nombre);
-//            } else {
-//                nombres.add(nombre);
-//            }
-//
-//            aux.adicionar(estudiante);
-//        }
-//        vaciar(aux);
-//
-//        System.out.println("Nombres repetidos:");
-//        for (String nombre : nombresRepetidos) {
-//            System.out.println(nombre);
-//        }
-//    }
-
-
-
-
-
-
+    public void mostrarEstudiantesRepetido(String nombre) {
+        ColaEstudiante aux = new ColaEstudiante();
+        while (!esvacia()) {
+            Estudiante estudiante = eliminar();
+            if (estudiante.getNombre().equalsIgnoreCase(nombre)) {
+                estudiante.mostrar();
+            }
+            aux.adicionar(estudiante);
+        }
+        vaciar(aux);
+    }
 
 }
