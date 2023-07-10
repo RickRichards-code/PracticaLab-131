@@ -68,5 +68,18 @@ public class Leer
       { return Double.NaN;
       }
     }
+
+    public static char datoChar() {
+        try {
+            String input = dato();
+            if (input.length() > 0) {
+                return input.charAt(0);
+            } else {
+                return '\0'; // Carácter nulo si no se ingresó ninguna entrada
+            }
+        } catch (Exception e) {
+            return '\0'; // Carácter nulo en caso de error
+        }
+    }
   }  
 

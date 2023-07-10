@@ -57,8 +57,8 @@ public class Main {
 
 
 //        =================== COlA OBJETOS - AUTO ======================
-        ColaAuto cola = new ColaAuto();
-        cola.llenarCola();
+//        ColaAuto cola = new ColaAuto();
+//        cola.llenarCola();
 //        cola.mostrarCola();
 
 //        System.out.println("--- listar los auto del mismo tipoAuto ---");
@@ -71,20 +71,21 @@ public class Main {
 //        System.out.println("--- quitar autos con el mismo codigo ---");
 //        cola.eliminarAutosMismoCodigo();
 //        cola.mostrarCola();
-        System.out.println("--- calcular promedio de monto de pago ---");
-        double prom = cola.calcularPromedioMontoPago();
-        System.out.println("promedio  de monto de pago: " + prom);
+//        System.out.println("--- calcular promedio de monto de pago ---");
+//        double prom = cola.calcularPromedioMontoPago();
+//        System.out.println("promedio  de monto de pago: " + prom);
 
-
-
-
-
-
-
-
-
-
+//        =================== COlA OBJETOS - ESTUDIANTE ======================
+//        ColaEstudiante cola = new ColaEstudiante();
+//        cola.llenarCola();
+//        System.out.println("--- mostrar estudiantes femeninos ---");
+//        cola.mostrarEstudiatesFemeninos();
+//
+//
+//        System.out.println("--- mostrar el estudiante con mayor edad ---");
+//            cola.mostrarEstudianteMayorEdad();
 
 
     }
+
 }
