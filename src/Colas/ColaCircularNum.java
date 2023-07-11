@@ -51,18 +51,28 @@ public class ColaCircularNum {
         return (elem);
     }
 
+    //    void mostrarCola() {
+//        if (esvacia()) {
+//            System.out.println("Cola vacia ");
+//        } else {
+//            System.out.println("\n--- Datos Cola Circular ---");
+//            ColaCircularNum aux = new ColaCircularNum();
+//            while (!esvacia()) {
+//                int elem = eliminar();
+//                aux.adicionar(elem);
+//                System.out.println(elem);
+//            }
+//            vaciar(aux);
+//        }
+//    }
     void mostrarCola() {
         if (esvacia()) {
             System.out.println("Cola vacia ");
         } else {
             System.out.println("\n--- Datos Cola Circular ---");
-            ColaCircularNum aux = new ColaCircularNum();
-            while (!esvacia()) {
-                int elem = eliminar();
-                aux.adicionar(elem);
-                System.out.println(elem);
+            for (int i = ini + 1; i <= fin; i++) {
+                System.out.println(v[i]);
             }
-            vaciar(aux);
         }
     }
 
@@ -82,5 +92,74 @@ public class ColaCircularNum {
     }
 
 
+    // separar impares arriba y pares abajo
+    void imparesArribaParesAbajo() {
+        ColaCircularNum aux = new ColaCircularNum();
+        ColaCircularNum aux2 = new ColaCircularNum();
+        while (!esvacia()) {
+            int e = eliminar();
+            if (e % 2 == 0)
+                aux.adicionar(e);
+            else
+                aux2.adicionar(e);
+        }
+        vaciar(aux2);
+        vaciar(aux);
+        mostrarCola();
+    }
 
+
+    boolean esUno() {
+        ColaCircularNum aux = new ColaCircularNum();
+        while (!esvacia()) {
+            int e = eliminar();
+            if (!(e == 1))
+                return false;
+            aux.adicionar(e);
+        }
+        vaciar(aux);
+        return true;
+    }
+
+
+    void mayoreMenorPromedio() {
+        ColaCircularNum aux = new ColaCircularNum();
+        ColaCircularNum aux2 = new ColaCircularNum();
+        ColaCircularNum aux3 = new ColaCircularNum();
+        int sum = 0;
+        int c = 0;
+
+        while (!esvacia()) {
+            int e = eliminar();
+            sum = sum + e;
+            c++;
+            aux.adicionar(e);
+        }
+        vaciar(aux);
+
+        if (c > 0) {
+            double prom = (double) sum / c;
+            System.out.println("promedio: " + prom);
+            if (prom > 1) {
+                while (!aux.esvacia()) {
+                    int e = aux.eliminar();
+                    if ((double) e > prom)
+                        aux2.adicionar(e);
+                    else if ((double) e < prom)
+                        aux3.adicionar(e);
+                    aux.adicionar(e);
+                }
+                vaciar(aux);
+            }
+        } else {
+            System.out.println("La cola está vacía. No se puede calcular el promedio.");
+        }
+
+        System.out.println("--- cola mayores al promedio ---");
+        aux2.mostrarCola();
+        System.out.println("--- cola menores al promedio ---");
+        aux3.mostrarCola();
+    }
 }
+
+

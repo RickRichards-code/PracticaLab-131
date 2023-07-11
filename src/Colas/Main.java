@@ -55,7 +55,6 @@ public class Main {
 //        =================== COlA CIRCULAR CADENAS ======================
 
 
-
 //        =================== COlA OBJETOS - AUTO ======================
 //        ColaAuto cola = new ColaAuto();
 //        cola.llenarCola();
@@ -76,8 +75,8 @@ public class Main {
 //        System.out.println("promedio  de monto de pago: " + prom);
 
 //        =================== COlA OBJETOS - ESTUDIANTE ======================
-        ColaEstudiante cola = new ColaEstudiante();
-        cola.llenarCola();
+//        ColaEstudiante cola = new ColaEstudiante();
+//        cola.llenarCola();
 //        System.out.println("--- mostrar estudiantes femeninos ---");
 //        cola.mostrarEstudiatesFemeninos();
 //
@@ -89,9 +88,39 @@ public class Main {
 //        System.out.println("--- mostrar estudiantes repetidos ---");
 //        cola.mostrarEstudiantesRepetido("mario");
 
-        System.out.println("--- desviacion estandar ---");
-        double e  = cola.calcularDesviacionEstandarEdades();
-        System.out.println("desviacion estandar: " + e);
+//        System.out.println("--- desviacion estandar ---");
+//        double e  = cola.calcularDesviacionEstandarEdades();
+//        System.out.println("desviacion estandar: " + e);
+//        cola.imparesArribaParesAbajo();
+
+//        ColaCircularNum cola = new ColaCircularNum();
+//        cola.llenarCola();
+//        cola.mostrarCola();
+////
+//        System.out.println("--- mostra colas mayor/menor al promedio ---");
+//        double i = cola.promedio();
+// 7       System.out.println("promedio: " + i);
+//        cola.mayoreMenorPromedio();
+
+
+//        ====================================
+//        ColaCircularCad cola = new ColaCircularCad();
+//        cola.llenarCola();
+//        cola.mostrarCola();
+//
+//        System.out.println("--- eliminar vocales ---");
+//        cola.eliminarVocales1();
+//        cola.mostrarCola();
+
+        // ColaCircularProducto  cola = new ColaCircularProducto();
+        // cola.comprarProducto();
+
+        ColaCircularPersona p = new ColaCircularPersona();
+        p.llenarCola();
+        p.mostrarCola();
+
+
+
     }
 
 }
