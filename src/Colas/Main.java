@@ -115,12 +115,21 @@ public class Main {
         // ColaCircularProducto  cola = new ColaCircularProducto();
         // cola.comprarProducto();
 
-        ColaCircularPersona p = new ColaCircularPersona();
-        p.llenarCola();
-        p.mostrarCola();
+//        ColaCircularPersona p = new ColaCircularPersona();
+//        p.llenarCola();
+//        p.mostrarCola();
 
 
-
+        // ==================================  DEFENSA NRO 5 COLAS CIRCULARES  ==================================
+        ColaCircularPaciente cola = new ColaCircularPaciente();
+        cola.leerDatosGenerarCodigo();
+        cola.mostrarCola();
+        ColaCircularHistorial historial = new ColaCircularHistorial();
+        historial.generarHistorial(cola);
+        historial.mostrarCola();
+//        historial.incisosBCDE();
+//        cola.mostrarCantidadHombresMujeres();
+//        historial.especialidadMenosConsultas();
     }
 
 }

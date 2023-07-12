@@ -1,11 +1,11 @@
 package Colas;
 
-public class ColaCircularPersona {
+public class ColaCircularCad {
     private int max = 150;
-    private Persona v[] = new Persona[max + 1];
+    private String v[] = new String[max + 1];
     private int ini, fin;
 
-    ColaCircularPersona() {
+    ColaCircularCad() {
         ini = fin = 0;
     }
 
@@ -19,14 +19,12 @@ public class ColaCircularPersona {
         }
         return (false);
     }
+
     boolean esllena() {
-        if (nroelem() == max - 1) {
-            return (true);
-        }
-        return (false);
+        return nroelem() == max - 1;
     }
 
-    void adicionar(Persona elem) {
+    void adicionar(String elem) {
         if (!esllena()) {
             fin = (fin + 1) % max;
             v[fin] = elem;
@@ -35,8 +33,8 @@ public class ColaCircularPersona {
         }
     }
 
-    Persona eliminar() {
-        Persona elem = new Persona();
+    String eliminar() {
+        String elem = "";
         if (!esvacia()) {
             ini = (ini + 1) % max;
             elem = v[ini];
@@ -54,11 +52,11 @@ public class ColaCircularPersona {
             System.out.println("Cola vacia ");
         } else {
             System.out.println("\n--- Datos Cola Circular ---");
-            ColaCircularPersona aux = new ColaCircularPersona();
+            ColaCircularCad aux = new ColaCircularCad();
             while (!esvacia()) {
-                Persona elem = eliminar();
+                String elem = eliminar();
                 aux.adicionar(elem);
-                elem.mostrar();
+                System.out.println(elem);
             }
             vaciar(aux);
         }
@@ -69,13 +67,11 @@ public class ColaCircularPersona {
         System.out.print("ingrese el numero de elementos a ingresar: ");
         int n = Leer.datoInt();
         for (int i = 1; i <= n; i++) {
-            Persona elem = new Persona();
-            elem.leer();
-            adicionar(elem);
+            adicionar(Leer.dato());
         }
     }
 
-    void vaciar(ColaCircularPersona a) {
+    void vaciar(ColaCircularCad a) {
         while (!a.esvacia())
             adicionar(a.eliminar());
     }
