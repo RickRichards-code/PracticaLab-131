@@ -136,5 +136,16 @@ public class ColaCircularPaciente {
         vaciar(aux);
     }
 
+    ColaCircularCad generos() {
+        ColaCircularCad generos = new ColaCircularCad();
+        ColaCircularPaciente  aux = new ColaCircularPaciente();
+        while (!esvacia()) {
+            Paciente e = eliminar();
+            generos.adicionar(e.getSexo());
+            aux.adicionar(e);
+        }
+        vaciar(aux);
+        return (generos);
+    }
 
 }

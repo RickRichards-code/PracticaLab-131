@@ -124,12 +124,14 @@ public class Main {
         ColaCircularPaciente cola = new ColaCircularPaciente();
         cola.leerDatosGenerarCodigo();
         cola.mostrarCola();
-        ColaCircularHistorial historial = new ColaCircularHistorial();
-        historial.generarHistorial(cola);
-        historial.mostrarCola();
-        historial.incisosBCDE();
-        historial.mostrarCantidadHombresMujeres(cola);
-        historial.especialidadMenosConsultas();
+//        ColaCircularHistorial historial = new ColaCircularHistorial();
+//        historial.generarHistorial(cola);
+//        historial.mostrarCola();
+//        historial.incisosBCDE();
+        ColaCircularCad cantidadHombresMujeres = cola.generos();
+        cantidadHombresMujeres.HombresMujeres();
+//        historial.especialidadMenosConsultas();
+
     }
 
 }

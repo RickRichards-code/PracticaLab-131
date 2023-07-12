@@ -75,4 +75,21 @@ public class ColaCircularCad {
         while (!a.esvacia())
             adicionar(a.eliminar());
     }
+
+    void HombresMujeres() {
+        ColaCircularCad aux = new ColaCircularCad();
+        int h = 0, m = 0;
+        while (!esvacia()) {
+            String elem = eliminar();
+            aux.adicionar(elem);
+            elem = elem.toLowerCase();
+            if (elem.equals("m")) {
+                h++;
+            } else {
+                m++;
+            }
+        }
+        System.out.println("cantidad hombres atendidos: " + h);
+        System.out.println("cantidad mujeres atendidos: " + m);
+    }
 }
