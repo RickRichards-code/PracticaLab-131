@@ -127,9 +127,9 @@ public class Main {
         ColaCircularHistorial historial = new ColaCircularHistorial();
         historial.generarHistorial(cola);
         historial.mostrarCola();
-//        historial.incisosBCDE();
-//        cola.mostrarCantidadHombresMujeres();
-//        historial.especialidadMenosConsultas();
+        historial.incisosBCDE();
+        historial.mostrarCantidadHombresMujeres(cola);
+        historial.especialidadMenosConsultas();
     }
 
 }

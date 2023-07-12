@@ -86,13 +86,14 @@ public class ColaCircularHistorial {
         ColaCircularHistorial aux = new ColaCircularHistorial();
         while (!codigos.esvacia()) {
             String cod = codigos.eliminar().getCodigo();
-            System.out.println("ingrese el costo del trauma para el paciente con codigo: " + cod);
+            System.out.println("\n--- ingrese datos del hitorial del paciente ---");
+            System.out.print("ingrese el costo del trauma para el paciente con codigo " + cod + " : ");
             int t = Leer.datoInt();
-            System.out.println("ingrese el costo del ginecologia para el paciente con codigo: " + cod);
+            System.out.print("ingrese el costo del ginecologia para el paciente con codigo " + cod + " : ");
             int g = Leer.datoInt();
-            System.out.println("ingrese el costo del cirugia para el paciente con codigo: " + cod);
+            System.out.print("ingrese el costo del cirugia para el paciente con codigo " + cod + " : ");
             int c = Leer.datoInt();
-            System.out.println("ingrese el costo del dermatologia para el paciente con codigo: " + cod);
+            System.out.print("ingrese el costo del dermatologia para el paciente con codigo " + cod + " : ");
             int d = Leer.datoInt();
             Historial h = new Historial(cod, t, g, c, d);
             aux.adicionar(h);
@@ -115,17 +116,21 @@ public class ColaCircularHistorial {
         while (!esvacia()) {
             Historial e = eliminar();
             t = t + e.getTrauma();
-            t1++;
+            if (e.getTrauma() > 0)
+                t1++;
             g = g + e.getGinecologia();
-            g1++;
+            if (e.getGinecologia() > 0)
+                g1++;
             c = c + e.getCirugia();
-            c1++;
+            if (e.getCirugia() > 0)
+                c1++;
             d = d + e.getDermatologia();
-            d1++;
-            total = total + t + g + c + d;
+            if (e.getDermatologia() > 0)
+                d1++;
             count++;
             aux.adicionar(e);
         }
+        total = total + t + g + c + d;
         System.out.println("\n--- mostrar por especialidad la cantidad que son atendidos y el ingreso que se registra ---");
         System.out.println("cantidad de atentidos: trauma: " + t1 + " | ginecologia: " + g1 + " | cirugia: " + c1 + " | dermatologia: " + d1);
         System.out.println("ingresoso: trauma: " + t + " | ginecologia: " + g + " | cirugia: " + c + " | dermatologia: " + d);
@@ -205,8 +210,6 @@ public class ColaCircularHistorial {
                 d++;
             h.adicionar(e);
         }
-        vaciar(h);
-        System.out.println("\n--- mostrar la especialidad que mas ingresos genera ---");
         int maximo = maximo(t, g, c, d);
         if (maximo == t) {
             System.out.println("trauma, es la especialidad que menos consultas tiene");
@@ -217,6 +220,28 @@ public class ColaCircularHistorial {
         } else if (maximo == d) {
             System.out.println("dermatologia, es la especialidad que menos consultas tiene");
         }
+        vaciar(h);
+    }
+
+
+    // inciso F)
+
+    void mostrarCantidadHombresMujeres(ColaCircularPaciente p) {
+        int h = 0, m = 0;
+        ColaCircularPaciente aux = new ColaCircularPaciente();
+        while (!p.esvacia()) {
+            Paciente e = p.eliminar();
+            if (e.getSexo().equals("m")) {
+                h++;
+            } else {
+                m++;
+            }
+            aux.adicionar(e);
+        }
+        System.out.println("\n--- mostrar cuantas mujeres y hombres son atendidos ---");
+        System.out.println("hombres: " + h);
+        System.out.println("mujeres: " + m);
+        p.vaciar(aux);
     }
 
 
