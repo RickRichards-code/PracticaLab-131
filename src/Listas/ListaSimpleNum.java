@@ -155,16 +155,17 @@ public class ListaSimpleNum extends ListaNum {
     // agregar x nodos despues del nodo de la posicion K
     void agregarNodosDespuesDe(int k) {
         NodoNum q = getP();
+        NodoNum r = getP();
+
         int contador = 1;
 
         while (contador < k - 1 && q != null) {
             q = q.getSig(); // nodo antes de K
             contador++;
         }
-        NodoNum z = q;
-        z = z.getSig(); // nodo despues de K
 
-        if (q != null && z != null) {
+
+        if (q != null) {
             NodoNum nodo = q;
             System.out.print("ingrese n: "); // numero nodos antes de K
             int n = Leer.datoInt();
@@ -177,9 +178,12 @@ public class ListaSimpleNum extends ListaNum {
                 nuevoNodo.setSig(nodo.getSig());
                 nodo.setSig(nuevoNodo);
                 nodo = nuevoNodo;
+                q = q.getSig();
             }
+            q = q.getSig();
 
-            NodoNum nodo1 = z;
+
+            NodoNum nodo1 = q;
             System.out.print("ingrese m: "); // numero nodos despues  de K
             int m = Leer.datoInt();
             for (int i = 0; i < m; i++) {
@@ -187,11 +191,10 @@ public class ListaSimpleNum extends ListaNum {
                 int dato = Leer.datoInt(); // Lee el dato del nuevo nodo
                 NodoNum nuevoNodo = new NodoNum();
                 nuevoNodo.setDato(dato);
-                nuevoNodo.setSig(nodo.getSig());
-                nodo.setSig(nuevoNodo);
-                nodo = nuevoNodo;
+                nuevoNodo.setSig(nodo1.getSig());
+                nodo1.setSig(nuevoNodo);
+                nodo1 = nuevoNodo;
             }
-
 
         } else {
             System.out.println("La posición K no existe en la lista.");
