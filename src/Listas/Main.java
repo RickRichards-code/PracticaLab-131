@@ -8,6 +8,9 @@ public class Main {
         System.out.println("\n--- rotar lista ---");
         lista.rotarKnodos(10);
         lista.mostrarLista();
+        System.out.println("\n--- agregar X nodos despues del nodo K ---");
+        lista.agregarNodosDespuesDe(3);
+        lista.mostrarLista();
 
     }
 }
