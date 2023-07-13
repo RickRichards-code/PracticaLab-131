@@ -77,29 +77,33 @@ public class ListaSimpleNum extends ListaNum {
         NodoNum q = getP();
         System.out.println("--- Datos de la lista ---");
         while (q != null) {
-            System.out.print(q.getDato() + "-> ");
+            System.out.print(q.getDato() + " -> ");
             q = q.getSig();
         }
         System.out.print("null");
-        System.out.println("--- fin de la lista ---");
+        System.out.println("\n--- fin de la lista ---");
     }
 
 
     // ========================================================================
-    void llenarTipoPila(int cantidad) {
+    void llenarTipoPila() {
+        System.out.print("ingrese la cantidad de elementos a ingresar: ");
+        int cantidad = Leer.datoInt();
         for (int i = 0; i < cantidad; i++) {
             System.out.print("ingrese un elemento: ");
             adicionarPrimero(Leer.datoInt());
         }
-        System.out.println("------------------------");
+//        System.out.println("------------------------");
     }
 
-    void llenarTipoCola(int cantidad) {
+    void llenarTipoCola() {
+        System.out.print("ingrese la cantidad de elementos a ingresar: ");
+        int cantidad = Leer.datoInt();
         for (int i = 0; i < cantidad; i++) {
             System.out.print("ingrese un elemento: ");
             adcionarUltimo(Leer.datoInt());
         }
-        System.out.println("------------------------");
+//        System.out.println("------------------------");
     }
 
     int cantidadNumeros() {
@@ -124,8 +128,31 @@ public class ListaSimpleNum extends ListaNum {
     }
 
     void rotarNumerosDerecha() {
-
-
+        NodoNum q = new NodoNum();
+        q = eliminarUltimo();
+        adicionarPrimero(q.getDato());
     }
+
+    void rotarNumerosIzquierda() {
+        NodoNum q = new NodoNum();
+        q = eliminarPrimero();
+        adcionarUltimo(q.getDato());
+    }
+
+    void rotarKnodos(int k) {
+        if (k > 0 && k < cantidadNumeros()) {
+            ListaSimpleNum aux = new ListaSimpleNum();
+            for (int i = 0; i < k; i++) {
+                aux.adicionarPrimero(eliminarPrimero().getDato());
+            }
+            aux.rotarNumerosDerecha();
+            for (int i = 0; i < k; i++) {
+                adicionarPrimero(aux.eliminarPrimero().getDato());
+            }
+        }
+    }
+
+    // agregar x nodos despues del nodo de la posicion K
+
 
 }

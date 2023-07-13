@@ -119,7 +119,6 @@ public class Main {
 //        p.llenarCola();
 //        p.mostrarCola();
 
-
         // ==================================  DEFENSA NRO 5 COLAS CIRCULARES  ==================================
         ColaCircularPaciente cola = new ColaCircularPaciente();
         cola.leerDatosGenerarCodigo();
